@@ -12,6 +12,9 @@ jobs:
               uses: docker/setup-qemu-action@v1
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v1
+            - name: Check PG Version
+              run: |
+                  echo ${{ matrix.pg_version }}
             - name: Login to DockerHub
               uses: docker/login-action@v1
               with:
@@ -20,7 +23,7 @@ jobs:
             - name: PrepareReg Names
               id: read-docker-image-identifiers
               run: |
-                  echo VERSION_TAG=$(echo ${{ matrix.pg_version }}) >> $GITHUB_ENV
+                  echo VERSION_TAG=rzkmak/postgre-backup-s3:${{ matrix.pg_version }} >> $GITHUB_ENV
             - name: Build and push
               id: docker_build
               uses: docker/build-push-action@v2
