@@ -10,4 +10,7 @@ docker run -e AWS_SECRET_ACCESS_KEY=<AWS-SECRET-KEY> -e AWS_ACCESS_KEY_ID=<AWS-A
 
 see available version in: https://hub.docker.com/r/rzkmak/postgre-backup-s3/tags
 
+### TODO
+- [ ] add multiple version postgre using matrix
+
 Any contribution is welcomed and appreciated.
